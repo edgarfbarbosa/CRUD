@@ -5,3 +5,8 @@
   gap: 2rem;
   justify-content: center;
 }
+
+.button {
+  cursor: pointer;
+  line-height: 0;
+}
