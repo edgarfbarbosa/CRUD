@@ -6,6 +6,10 @@
   justify-content: center;
 }
 
+.header div {
+  display: flex;
+}
+
 .button {
   cursor: pointer;
   line-height: 0;
