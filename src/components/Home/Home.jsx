@@ -8,8 +8,9 @@ export function Home() {
         id: 1,
         name: "Edgar",
         number: 22999999999,
-      }
-    ]
+      },
+    ],
+    []
   )
 
   const columns = React.useMemo(
@@ -26,18 +27,60 @@ export function Home() {
         Header: "Número",
         acessor: 'number',
       }
-    ]
+    ],
+    []
   )
 
+  const table = useTable({ columns, data })
+
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow
+  } = table
+
   return (
-    <table>
+    <table {...getTableProps}>
       <thead>
-        <th></th>
-        <th></th>
-        <th></th>
+
+        {headerGroups.map(headerGroup => (
+
+          <tr {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map(columns => (
+              <th {...columns.getHeaderProps()}>
+                {columns.render('Header')}
+              </th>
+
+            ))}
+
+          </tr>
+
+        ))}
       </thead>
 
-      <tbody></tbody>
+      <tbody {...getTableBodyProps()}>
+
+        {rows.map(row => {
+          prepareRow(row)
+
+          return (
+            <tr {...row.getRowProps()}>
+              {row.cells.map(cell => {
+                return (
+                  <td {...cell.getCellProps()}>
+                    {cell.render('Cell')}
+                  </td>
+                )
+
+              })}
+
+            </tr>
+
+          )
+        })}
+      </tbody>
     </table>
   )
 }
