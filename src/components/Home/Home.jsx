@@ -5,10 +5,23 @@ export function Home() {
   const data = React.useMemo(
     () => [
       {
-        id: 1,
-        name: "Edgar",
-        number: 22999999999,
+        id: '1',
+        firstName: 'Edgar',
+        lastName: 'Barbosa',
+        number: '22999999999',
       },
+      {
+        id: '2',
+        firstName: 'Edgar',
+        lastName: 'Barbosa',
+        number: '22999999999',
+      },
+      {
+        id: '3',
+        firstName: 'Edgar',
+        lastName: 'Barbosa',
+        number: '22999999999',
+      }
     ],
     []
   )
@@ -16,16 +29,20 @@ export function Home() {
   const columns = React.useMemo(
     () => [
       {
-        Header: "id",
-        acessor: 'id',
+        Header: 'ID',
+        accessor: 'id',
       },
       {
-        Header: "Nome",
-        acessor: 'name',
+        Header: 'Nome',
+        accessor: 'firstName',
       },
       {
-        Header: "Número",
-        acessor: 'number',
+        Header: 'Sobrenome',
+        accessor: 'lastName',
+      },
+      {
+        Header: 'Número',
+        accessor: 'number',
       }
     ],
     []
