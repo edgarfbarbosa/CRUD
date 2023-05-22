@@ -1,6 +1,8 @@
 import * as React from "react"
 import { useTable } from "react-table"
 
+import styles from './Home.module.css'
+
 export function Home() {
   const data = React.useMemo(
     () => [
@@ -59,45 +61,47 @@ export function Home() {
   } = table
 
   return (
-    <table {...getTableProps}>
-      <thead>
+    <section className={styles.container}>
+      <table className={styles.table__container} {...getTableProps}>
+        <thead>
 
-        {headerGroups.map(headerGroup => (
+          {headerGroups.map(headerGroup => (
 
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(columns => (
-              <th {...columns.getHeaderProps()}>
-                {columns.render('Header')}
-              </th>
+            <tr {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map(columns => (
+                <th className={styles.table__header} {...columns.getHeaderProps()}>
+                  {columns.render('Header')}
+                </th>
 
-            ))}
-
-          </tr>
-
-        ))}
-      </thead>
-
-      <tbody {...getTableBodyProps()}>
-
-        {rows.map(row => {
-          prepareRow(row)
-
-          return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map(cell => {
-                return (
-                  <td {...cell.getCellProps()}>
-                    {cell.render('Cell')}
-                  </td>
-                )
-
-              })}
+              ))}
 
             </tr>
 
-          )
-        })}
-      </tbody>
-    </table>
+          ))}
+        </thead>
+
+        <tbody {...getTableBodyProps()}>
+
+          {rows.map(row => {
+            prepareRow(row)
+
+            return (
+              <tr {...row.getRowProps()}>
+                {row.cells.map(cell => {
+                  return (
+                    <td className={styles.table__cell} {...cell.getCellProps()}>
+                      {cell.render('Cell')}
+                    </td>
+                  )
+
+                })}
+
+              </tr>
+
+            )
+          })}
+        </tbody>
+      </table>
+    </section >
   )
 }

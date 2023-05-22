@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.table__container {
+  border-collapse: collapse;
+  width: 800px;
+}
+
+.table__header {
+  border: 1px solid black;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  text-align: left;
+}
+
+.table__cell {
+  border: 1px solid black;
+  font-size: 1.25rem;
+  padding: .5rem .5rem;
+  text-align: left;
+}
