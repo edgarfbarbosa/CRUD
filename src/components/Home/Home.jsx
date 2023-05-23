@@ -102,6 +102,6 @@ export function Home() {
           })}
         </tbody>
       </table>
-    </section >
+    </section>
   )
 }
