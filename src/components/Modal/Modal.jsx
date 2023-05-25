@@ -4,8 +4,8 @@ export function Modal({ isOpen }) {
   if (!isOpen) return null
 
   return (
-    <div>
-      <form>
+    <div className={styles.modal__container}>
+      <form className={styles.form__container}>
         <h2>Agende sua mensagem</h2>
 
         <fieldset>
