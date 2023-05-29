@@ -1,5 +1,7 @@
 import styles from './Modal.module.css'
 
+import { DateTimerPicker } from '../DateTimerPicker'
+
 export function Modal({ isOpen }) {
   if (!isOpen) return null
 
@@ -10,23 +12,23 @@ export function Modal({ isOpen }) {
 
         <fieldset>
           <div>
-            <label for="name"></label>
+            <label htmlFor="name"></label>
             <input id="name" type="text" placeholder="Nome" />
           </div>
           <div>
-            <label for="surname"></label>
+            <label htmlFor="surname"></label>
             <input id="surname" type="text" placeholder="Sobrenome" />
           </div>
         </fieldset>
 
         <div>
-          <label for="number"></label>
+          <label htmlFor="number"></label>
           <input id="number" type="tel" placeholder="Número do seu WhatsApp" />
         </div>
 
         <div>
-          <label for="date"></label>
-          <input id="date" type="date" />
+          <label htmlFor="date"></label>
+          <DateTimerPicker />
         </div>
 
         <div>

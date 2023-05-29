@@ -15,7 +15,7 @@ export function Header() {
       </div>
 
       <div>
-        <label for="name"></label>
+        <label htmlFor="name"></label>
         <input id="name" type="text" placeholder="Buscar" />
         <button className={styles.button} title="Buscar...">
           <MagnifyingGlass size={24} />
