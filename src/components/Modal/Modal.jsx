@@ -1,6 +1,6 @@
 import styles from './Modal.module.css'
 
-import { DateTimerPicker } from '../DateTimerPicker'
+import { DateTimerPicker } from "../DateTimerPicker"
 
 export function Modal({ isOpen }) {
   if (!isOpen) return null
