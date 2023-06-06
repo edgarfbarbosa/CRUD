@@ -1,6 +1,6 @@
 import styles from './Header.module.css'
-
 import { ListPlus, MagnifyingGlass } from "@phosphor-icons/react"
+
 import { useState } from "react"
 
 import { Modal } from "../Modal"
@@ -9,21 +9,21 @@ export function Header() {
   const [openModal, setOpenModal] = useState(false)
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header__container}>
       <div>
-        <h1>auto-message</h1>
+        <h1 className={styles.header__title}>auto-message</h1>
       </div>
 
       <div>
         <label htmlFor="name"></label>
-        <input id="name" type="text" placeholder="Buscar" />
-        <button className={styles.button} title="Buscar...">
+        <input className={styles.header__input} id="name" type="text" placeholder="Buscar..." />
+        <button className={styles.header__btn} title="Buscar...">
           <MagnifyingGlass size={24} />
         </button>
       </div>
 
       <div>
-        <button className={styles.button} title="Realizar agendamento..." onClick={() => setOpenModal(true)}>
+        <button className={styles.header__btn} title="Realizar agendamento..." onClick={() => setOpenModal(true)}>
           <ListPlus size={24} />
         </button>
       </div>

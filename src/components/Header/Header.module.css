@@ -1,16 +1,35 @@
-.header {
+.header__container {
   align-items: center;
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 4rem;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
-.header div {
+.header__title {
+  font-family: var(--font);
+  font-size: 2rem;
+}
+
+.header__container div {
   display: flex;
 }
 
-.button {
+.header__input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #222;
+}
+
+.header__input:focus {
+  outline: none;
+}
+
+.header__btn {
+  border: none;
+  border-bottom: 2px solid #222;
+  color: #222;
   cursor: pointer;
   line-height: 0;
 }
