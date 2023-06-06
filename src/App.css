@@ -1,0 +1,10 @@
+:root {
+  /* Fonte: */
+  --font: 'Poppins', sans-serif;
+  --font-color: #222;
+
+  /* Neumorphism: */
+  --bg-color: #ecf0f3;
+  --shadow-1: #d1d9e6;
+  --shadow-2: #fff;
+}
