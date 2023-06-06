@@ -10,7 +10,7 @@ export function Modal({ isOpen }) {
       <form className={styles.form__container}>
         <h2>Agende sua mensagem</h2>
 
-        <fieldset>
+        <div>
           <div>
             <label htmlFor="name"></label>
             <input id="name" type="text" placeholder="Nome" />
@@ -19,17 +19,14 @@ export function Modal({ isOpen }) {
             <label htmlFor="surname"></label>
             <input id="surname" type="text" placeholder="Sobrenome" />
           </div>
-        </fieldset>
+        </div>
 
         <div>
           <label htmlFor="number"></label>
           <input id="number" type="tel" placeholder="Número do seu WhatsApp" />
         </div>
 
-        <div>
-          <label htmlFor="date"></label>
-          <DateTimerPicker />
-        </div>
+        <DateTimerPicker />
 
         <div>
           <textarea placeholder="Escreva sua mensagem..." />
