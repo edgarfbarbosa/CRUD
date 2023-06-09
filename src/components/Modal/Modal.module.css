@@ -18,14 +18,11 @@
   width: 300px;
 }
 
-.form__container div {
-  margin: .25rem 0;
-}
-
-.form__container div {
+.form__container>div {
+  border: none;
   display: flex;
   flex-direction: column;
-  border: none;
+  margin: .25rem 0;
   width: 100%;
 }
 
