@@ -1,17 +1,14 @@
 import { useState } from 'react'
-
-import styles from './Modal.module.css'
-
 import { DateTimerPicker } from "../DateTimerPicker"
+import useContextoDoCliente from "../Context"
+import styles from "./Modal.module.css"
 
 export function Modal({ isOpen }) {
   if (!isOpen) return null
 
-  const [newUser, setNewUser] = useState({
-    name: "",
-    lastName: "",
-    number: 0
-  })
+  const { adicionarClienteNaTabela } = useContextoDoCliente()
+
+  const [newUser, setNewUser] = useState({})
 
   function coletarDados(event, atributoQueEstouColetando) {
     setNewUser({
@@ -22,7 +19,8 @@ export function Modal({ isOpen }) {
 
   function enviarDados(event) {
     event.preventDefault()
-    console.log(newUser)
+
+    adicionarClienteNaTabela(newUser)
   }
 
   return (
