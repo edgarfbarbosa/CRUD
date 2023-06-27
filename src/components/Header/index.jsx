@@ -1,9 +1,7 @@
-import styles from './Header.module.css'
-import { ListPlus, MagnifyingGlass } from "@phosphor-icons/react"
-
 import { useState } from "react"
-
+import { ListPlus, MagnifyingGlass } from "@phosphor-icons/react"
 import { Modal } from "../Modal"
+import styles from "./Header.module.css"
 
 export function Header() {
   const [openModal, setOpenModal] = useState(false)
