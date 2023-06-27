@@ -1,32 +1,10 @@
 import * as React from "react"
 import { useTable } from "react-table"
-
-import styles from './Home.module.css'
+import useContextoDoCliente from "../Context"
+import styles from "./Home.module.css"
 
 export function Home() {
-  const data = React.useMemo(
-    () => [
-      {
-        id: '1',
-        firstName: 'Edgar',
-        lastName: 'Barbosa',
-        number: '22999999999',
-      },
-      {
-        id: '2',
-        firstName: 'Edgar',
-        lastName: 'Barbosa',
-        number: '22999999999',
-      },
-      {
-        id: '3',
-        firstName: 'Edgar',
-        lastName: 'Barbosa',
-        number: '22999999999',
-      }
-    ],
-    []
-  )
+  const { clientes: data } = useContextoDoCliente()
 
   const columns = React.useMemo(
     () => [
@@ -36,7 +14,7 @@ export function Home() {
       },
       {
         Header: 'Nome',
-        accessor: 'firstName',
+        accessor: 'name',
       },
       {
         Header: 'Sobrenome',
@@ -64,27 +42,20 @@ export function Home() {
     <section className={styles.container}>
       <table className={styles.table__container} {...getTableProps}>
         <thead>
-
           {headerGroups.map(headerGroup => (
-
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map(columns => (
                 <th className={styles.table__header} {...columns.getHeaderProps()}>
                   {columns.render('Header')}
                 </th>
-
               ))}
-
             </tr>
-
           ))}
         </thead>
 
         <tbody {...getTableBodyProps()}>
-
           {rows.map(row => {
             prepareRow(row)
-
             return (
               <tr {...row.getRowProps()}>
                 {row.cells.map(cell => {
@@ -93,11 +64,8 @@ export function Home() {
                       {cell.render('Cell')}
                     </td>
                   )
-
                 })}
-
               </tr>
-
             )
           })}
         </tbody>
