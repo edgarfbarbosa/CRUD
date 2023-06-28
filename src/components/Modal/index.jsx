@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState } from "react"
 import { DateTimerPicker } from "../DateTimerPicker"
+import { ArrowUUpLeft } from "@phosphor-icons/react"
 import useContextoDoCliente from "../Context"
 import styles from "./Modal.module.css"
 
-export function Modal({ isOpen }) {
+export function Modal({ isOpen, sairDoModal }) {
   if (!isOpen) return null
 
   const { adicionarClienteNaTabela } = useContextoDoCliente()
@@ -70,6 +71,11 @@ export function Modal({ isOpen }) {
 
         <button type="submit">Agendar mensagem</button>
       </form>
+
+      <button onClick={() => sairDoModal(false)}>
+        <ArrowUUpLeft size={24} />
+      </button>
+
     </div>
   )
 }

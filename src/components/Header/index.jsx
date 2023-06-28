@@ -6,6 +6,10 @@ import styles from "./Header.module.css"
 export function Header() {
   const [openModal, setOpenModal] = useState(false)
 
+  function sairDoModal(informaçãoDoFilho) {
+    setOpenModal(informaçãoDoFilho)
+  }
+
   return (
     <header className={styles.header__container}>
       <div>
@@ -26,7 +30,7 @@ export function Header() {
         </button>
       </div>
 
-      <Modal isOpen={openModal} />
+      <Modal isOpen={openModal} sairDoModal={sairDoModal} />
     </header >
   )
 }
