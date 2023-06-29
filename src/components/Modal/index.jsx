@@ -69,13 +69,13 @@ export function Modal({ isOpen, sairDoModal }) {
           <textarea placeholder="Escreva sua mensagem..." />
         </div>
 
-        <button type="submit">Agendar mensagem</button>
+        <div>
+          <button type="submit">Agendar mensagem</button>
+          <button onClick={() => sairDoModal(false)}>
+            <ArrowUUpLeft size={16} />
+          </button>
+        </div>
       </form>
-
-      <button onClick={() => sairDoModal(false)}>
-        <ArrowUUpLeft size={24} />
-      </button>
-
     </div>
   )
 }
