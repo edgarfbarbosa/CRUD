@@ -24,6 +24,8 @@ export function Modal({ isOpen, sairDoModal }) {
     adicionarClienteNaTabela(newUser)
   }
 
+  const handleModalClose = () => sairDoModal(false)
+
   return (
     <div className={styles.modal__container}>
       <form className={styles.form__container} onSubmit={enviarDados}>
@@ -69,13 +71,13 @@ export function Modal({ isOpen, sairDoModal }) {
           <textarea placeholder="Escreva sua mensagem..." />
         </div>
 
-        <button type="submit">Agendar mensagem</button>
+        <div>
+          <button type="submit">Agendar mensagem</button>
+          <button onClick={handleModalClose}>
+            <ArrowUUpLeft size={16} />
+          </button>
+        </div>
       </form>
-
-      <button onClick={() => sairDoModal(false)}>
-        <ArrowUUpLeft size={24} />
-      </button>
-
     </div>
   )
 }
