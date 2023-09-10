@@ -13,7 +13,7 @@ export function Header() {
   return (
     <header className={styles.header__container}>
       <div>
-        <h1 className={styles.header__title}>auto-message</h1>
+        <h1 className={styles.header__title}>SendNote</h1>
       </div>
 
       <div>
